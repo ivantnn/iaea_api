@@ -223,7 +223,7 @@ with tab5:
 
 with tab6:
     st.header("About")
-    st.write("This is an amateur and small project to make it easier to import nuclear data from the IAEA database. All information and code used to buy this is free and open source")
+    st.write("This is an amateur and small project to make it easier to import nuclear data from the IAEA database. All information and code used to build this is free and open source")
     url="https://www-nds.iaea.org/relnsd/vcharthtml/api_v0_guide.html"
     st.markdown("The IAEA database is accessed via its API:  [IAEA Api](%s)" % url)
     url3="https://github.com/ivantnn/iaea_api"
