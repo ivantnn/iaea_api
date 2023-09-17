@@ -13,17 +13,16 @@ class Api:
 
 	def Import_Cases(mode,isotope,param):
 		path=Api.path()
-		match mode:
-			case 'ground_states':
-				return Api.lc_df(path+'fields='+mode+'&nuclides='+isotope)
-			case 'levels':
-				return Api.lc_df(path+'fields='+mode+'&nuclides='+isotope)
-			case 'gammas':
-				return Api.lc_df(path+'fields='+mode+'&nuclides='+isotope)
-			case 'cummulative':
-				return Api.lc_df(path+'fields=cumulative_fy&'+param+'='+isotope)
-			case 'decay_rads':
-				return Api.lc_df(path+'fields=decay_rads&nuclides='+isotope+'&rad_types='+param)
+		if mode == 'ground_states':
+			return Api.lc_df(path+'fields='+mode+'&nuclides='+isotope)
+		elif mode =='levels':
+			return Api.lc_df(path+'fields='+mode+'&nuclides='+isotope)
+		elif mode == 'gammas':
+			return Api.lc_df(path+'fields='+mode+'&nuclides='+isotope)
+		elif mode == 'cummulative':
+			return Api.lc_df(path+'fields=cumulative_fy&'+param+'='+isotope)
+		elif 'decay_rads':
+			return Api.lc_df(path+'fields=decay_rads&nuclides='+isotope+'&rad_types='+param)
 
 	def Import(mode,isotope,param=None): #Only one that can have all isotopes. Param changes for the decay_rads or te cummulatice cases
 		if type(isotope)==list:
