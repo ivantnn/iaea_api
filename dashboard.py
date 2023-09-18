@@ -43,6 +43,7 @@ st.set_page_config(
 st.title("I want to import some nuclear data")
 st.write("Here one can find all the modes to import nuclear data from the IAEA (International Atomic Energy Agency's database")
 st.write("On each tab, one can find all the explanation and the modes for the data")
+st.markdown("**Be aware**: Any input is allowed but it might not exist in the IAEA database. As an example, one can try to download a hidrogen isotope with 10 neutrons, but there is no recording of such in the database, thus rendering the downloaded file empty")
 
 #Mode = st.selectbox("Select the data type to be imported", ('Ground States','Levels','Gammas','Cummulative','Decay Radiations'))
 
@@ -59,6 +60,8 @@ with tab1:
     st.markdown('A Ground State is the lowest energy level on which the nucleus of an atom can exist. Thus its name.')
     st.markdown('*How to use* : Select the desired number of protons and neutrons from the desired isotope and hit **Download (CSV)** to get the data')
     st.markdown('*For Ground States mode only*: IAEA API allows the user to download all the isotopes together in a single table, therefore if you switch on the **Import all the isotopes** option and hit **Download (CSV)** you will get a complete table with all the isotopes and their ground states')
+    st.markdown('Note: Some half lifes are in eV, this is due to their very short times. To convert it fully to time one can use the following equation, being gamma the energy you read in the database for these cases:')
+    st.latex(r'''T_{1/2}=\frac{\hbar ln(2)}{\Gamma}''')
     col0,col01 = st.columns(2)
     import_all=col0.toggle('Import all the isotopes',key="GS_all")
     if import_all==True:
@@ -105,6 +108,11 @@ with tab1:
 
 with tab2:
     st.header('Import the Levels')
+    st.markdown('A nucleus can have several excitation levels, which are different levels of energy. These levels can have their own nuclear spin, radius, binding energy, decay type and half life and many more.')
+    st.markdown('This data lists all the known excitation levels from each known isotope')
+    st.markdown('*How to use* : Select the desired number of protons and neutrons from the desired isotope and hit **Download (CSV)** to get the data')
+    st.markdown('Note: Some half lifes are in eV, this is due to their very short times. To convert it fully to time one can use the following equation, being gamma the energy you read in the database for these cases:')
+    st.latex(r'''T_{1/2}=\frac{\hbar ln(2)}{\Gamma}''')
     with st.container():
             col1,col2 = st.columns(2)
 
@@ -136,6 +144,8 @@ with tab2:
 
 with tab3:
     st.header('Import the Gamma levels')
+    st.markdown('This data lists all the levels of energy which the isotope will emit a photon while also listing the initial and end energy states of the nucleus.')
+    st.markdown('*How to use* : Select the desired number of protons and neutrons from the desired isotope and hit **Download (CSV)** to get the data')
     with st.container():
             col1,col2 = st.columns(2)
 
@@ -164,7 +174,16 @@ with tab3:
                 mime='text/csv'
             )
 with tab4:
-    st.header('Import the cummulative chains')
+    st.header('Import the Cummulative chains')
+    st.markdown('Given an isotope, this mode lists all the possible products for a specified.')
+    st.markdown('''
+                This data has two different modes:
+
+                - Parents: All the products for the specified parent are returned.
+
+                - Products: All the fission yields of this product, for any parent, are returned
+                ''')
+    st.markdown('*How to use* : Select the desired number of protons and neutrons from the desired isotope. Then select the desired mode (Parents or Products) and hit **Download (CSV)** to get the data')
     with st.container():
             col1,col2 = st.columns(2)
 
@@ -197,14 +216,40 @@ with tab4:
 
 with tab5:
     st.header('Import the decay radiations')
+    st.markdown('Given an isotope, this mode lists all the specified radiation decays in the different energy levels.')
+    st.markdown(r'''
+                This data lists all the different decay types:
+
+                - **Alpha**: Emission of 2-proton and 2-neutron particles [Wikipedia](https://en.wikipedia.org/wiki/Alpha_decay)
+                $$
+                U_{146}^{92} -> \alpha^{2}_{2} + Th_{144}^{90}
+                $$
+                - **Beta Minus**: Convertion of the atomic nucleus into a nucleus with atomic number increased by one, while emitting an electron and an electron antineutrino. [Wikipedia](https://en.wikipedia.org/wiki/Beta_decay)
+                $$
+                C_{6}^{8} -> N^{7}_{7} + \bar{\nu}_{e} + e^{{}-{}}
+                $$
+                - **Beta Plus**: Convertion of the atomic nucleus into a nucleus with atomic number increased by one, while emitting a positron and an electron neutrino. Note: Electron Capture is considered within this scope in the IAEA database [Wikipedia](https://en.wikipedia.org/wiki/Beta_decay)
+                $$
+                C_{6}^{4} -> B^{5}_{5} + \nu_{e} + e^{{}+{}}
+                $$
+                - **Gamma**: It happens when an excited nucleus emits some of its energy (as a gamma particle)in order to return to the ground state or a lower energy state. [Wikipedia](https://en.wikipedia.org/wiki/Gamma_ray)
+                $$
+                Ba_{56}^{{}*{}81} -> Ba^{56}_{81} + \gamma
+                $$
+
+                - **Auger and conversion electron**: The filling of an inner-shell vacancy of an atom is accompanied by the emission of an electron from the same atom. [Wikipedia](https://en.wikipedia.org/wiki/Auger_effect)
+
+                - **X-ray**: Lower energy gamma radiation.
+                ''')
+    st.markdown('*How to use* : Select the desired number of protons and neutrons from the desired isotope. Then select the desired radiation and hit **Download (CSV)** to get the data')
     with st.container():
             col1,col2 = st.columns(2)
 
             Isotope_z = col1.number_input("Select Z value",min_value=1, max_value=119,key=f"isoz_dr")
             Isotope_n = col2.number_input("Select N value", min_value=1, max_value=176,key=f"ison_dr")
-            p = st.selectbox("Mode of the Cummulative",('Alpha','Beta Plus','Beta Minus','Gamma','Electron','X-ray'), key='mode_dr')
+            p = st.selectbox("Mode of the Cummulative",('Alpha','Beta Plus','Beta Minus','Gamma','Auger and conversion electron','X-ray'), key='mode_dr')
 
-            rad_dic={'Alpha':'a','Beta Plus':'bp','Beta Minus':'bm','Gamma':'g','Electron':'e','X-ray':'x'}
+            rad_dic={'Alpha':'a','Beta Plus':'bp','Beta Minus':'bm','Gamma':'g','Auger and conversion electron':'e','X-ray':'x'}
             aa='\huge '+isotopes_dic[Isotope_z]+'^{'+str(Isotope_z)+'}_{'+str(Isotope_n)+'}'
 
             ref = str(Isotope_z+Isotope_n)+api_dic[Isotope_z]
