@@ -42,7 +42,7 @@ st.set_page_config(
 
 st.title("I want to import some nuclear data")
 st.write("Here one can find all the modes to import nuclear data from the IAEA (International Atomic Energy Agency's database")
-st.wirte("On each tab, one can find all the explanation and the modes for the data")
+st.write("On each tab, one can find all the explanation and the modes for the data")
 
 #Mode = st.selectbox("Select the data type to be imported", ('Ground States','Levels','Gammas','Cummulative','Decay Radiations'))
 
