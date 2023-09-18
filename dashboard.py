@@ -41,6 +41,8 @@ st.set_page_config(
 )
 
 st.title("I want to import some nuclear data")
+st.write("Here one can find all the modes to import nuclear data from the IAEA (International Atomic Energy Agency's database")
+st.wirte("On each tab, one can find all the explanation and the modes for the data")
 
 #Mode = st.selectbox("Select the data type to be imported", ('Ground States','Levels','Gammas','Cummulative','Decay Radiations'))
 
@@ -53,6 +55,10 @@ tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Ground States", "Levels", "Gammas
 with tab1:
     Mode='ground_states'
     st.header('Import the Ground States')
+    st.markdown('A nucleus can have several excitation levels, which are different levels of energy. These levels can have their own nuclear spin, radius, binding energy, decay type and half life and many more.')
+    st.markdown('A Ground State is the lowest energy level on which the nucleus of an atom can exist. Thus its name.')
+    st.markdown('*How to use* : Select the desired number of protons and neutrons from the desired isotope and hit **Download (CSV)** to get the data')
+    st.markdown('*For Ground States mode only*: IAEA API allows the user to download all the isotopes together in a single table, therefore if you switch on the **Import all the isotopes** option and hit **Download (CSV)** you will get a complete table with all the isotopes and their ground states')
     col0,col01 = st.columns(2)
     import_all=col0.toggle('Import all the isotopes',key="GS_all")
     if import_all==True:
