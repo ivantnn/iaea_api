@@ -1,6 +1,7 @@
 import numpy as np  # np mean, np random
 import pandas as pd  # read csv, df manipulation
 import plotly.express as px  # interactive charts
+import plotly.figure_factory as ff
 import streamlit as st
 import iaea
 
@@ -41,17 +42,95 @@ st.set_page_config(
 )
 
 st.title("I want to import some nuclear data")
-st.write("Here one can find all the modes to import nuclear data from the IAEA (International Atomic Energy Agency's database")
+st.write("Here one can find all the modes to import nuclear data from the IAEA (International Atomic Energy Agency's) database")
 st.write("On each tab, one can find all the explanation and the modes for the data")
 st.markdown("**Be aware**: Any input is allowed but it might not exist in the IAEA database. As an example, one can try to download a hidrogen isotope with 10 neutrons, but there is no recording of such in the database, thus rendering the downloaded file empty")
 
 #Mode = st.selectbox("Select the data type to be imported", ('Ground States','Levels','Gammas','Cummulative','Decay Radiations'))
 
-isotopes_dic={1:'H',2:'He',3:'Li',4:'Be',5:'B',6:'C',7:'N',8:'O',9:'F',10:'Ne',11:'Na',12:'Mg',13:'Al',14:'Si',15:'P',16:'S',17:'Cl',18:'Ar',19:'K',20:'Ca',21:'Sc',22:'Ti',23:'V',24:'Cr',25:'Mn',26:'Fe',27:'Co',28:'Ni',29:'Cu',30:'Zn',31:'Ga',32:'Ge',33:'As',34:'Se',35:'Br',36:'Kr',37:'Rb',38:'Sr',39:'Y',40:'Zr',41:'Nb',42:'Mo',43:'Tc',44:'Ru',45:'Rh',46:'Pd',47:'Ag',48:'Cd',49:'In',50:'Sn',51:'Sb',52:'Te',53:'I',54:'Xe',55:'Cs',56:'Ba',57:'La',58:'Ce',59:'Pr',60:'Nd',61:'Pm',62:'Sm',63:'Eu',64:'Gd',65:'Tb',66:'Dy',67:'Ho',68:'Er',69:'Tm',70:'Yb',71:'Lu',72:'Hf',73:'Ta',74:'W',75:'Re',76:'Os',77:'Ir',78:'Pt',79:'Au',80:'Hg',81:'Tl',82:'Pb',83:'Bi',84:'Po',85:'At',86:'Rn',87:'Fr',88:'Ra',89:'Ac',90:'Th',91:'Pa',92:'U',93:'Np',94:'Pu',95:'Am',96:'Cm',97:'Bk',98:'Cf',99:'Es',100:'Fm',101:'Md',102:'No',103:'Lr',104:'Rf',105:'Db',106:'Sg',107:'Bh',108:'Hs',109:'Mt',110:'Ds',111:'Rg',112:'Cn',113:'Nh',114:'Fl',115:'Mc',116:'Lv',117:'Ts',118:'Og',}
+isotopes_dic={0:'Nn',1:'H',2:'He',3:'Li',4:'Be',5:'B',6:'C',7:'N',8:'O',9:'F',10:'Ne',11:'Na',12:'Mg',13:'Al',14:'Si',15:'P',16:'S',17:'Cl',18:'Ar',19:'K',20:'Ca',21:'Sc',22:'Ti',23:'V',24:'Cr',25:'Mn',26:'Fe',27:'Co',28:'Ni',29:'Cu',30:'Zn',31:'Ga',32:'Ge',33:'As',34:'Se',35:'Br',36:'Kr',37:'Rb',38:'Sr',39:'Y',40:'Zr',41:'Nb',42:'Mo',43:'Tc',44:'Ru',45:'Rh',46:'Pd',47:'Ag',48:'Cd',49:'In',50:'Sn',51:'Sb',52:'Te',53:'I',54:'Xe',55:'Cs',56:'Ba',57:'La',58:'Ce',59:'Pr',60:'Nd',61:'Pm',62:'Sm',63:'Eu',64:'Gd',65:'Tb',66:'Dy',67:'Ho',68:'Er',69:'Tm',70:'Yb',71:'Lu',72:'Hf',73:'Ta',74:'W',75:'Re',76:'Os',77:'Ir',78:'Pt',79:'Au',80:'Hg',81:'Tl',82:'Pb',83:'Bi',84:'Po',85:'At',86:'Rn',87:'Fr',88:'Ra',89:'Ac',90:'Th',91:'Pa',92:'U',93:'Np',94:'Pu',95:'Am',96:'Cm',97:'Bk',98:'Cf',99:'Es',100:'Fm',101:'Md',102:'No',103:'Lr',104:'Rf',105:'Db',106:'Sg',107:'Bh',108:'Hs',109:'Mt',110:'Ds',111:'Rg',112:'Cn',113:'Nh',114:'Fl',115:'Mc',116:'Lv',117:'Ts',118:'Og'}
 
 api_dic={1:'h',2:'he',3:'li',4:'be',5:'b',6:'c',7:'n',8:'o',9:'f',10:'ne',11:'na',12:'mg',13:'al',14:'si',15:'p',16:'s',17:'cl',18:'ar',19:'k',20:'ca',21:'sc',22:'ti',23:'v',24:'cr',25:'mn',26:'fe',27:'co',28:'ni',29:'cu',30:'zn',31:'ga',32:'ge',33:'as',34:'se',35:'br',36:'kr',37:'rb',38:'sr',39:'y',40:'zr',41:'nb',42:'mo',43:'tc',44:'ru',45:'rh',46:'pd',47:'ag',48:'cd',49:'in',50:'sn',51:'sb',52:'te',53:'i',54:'xe',55:'cs',56:'ba',57:'la',58:'ce',59:'pr',60:'nd',61:'pm',62:'sm',63:'eu',64:'gd',65:'tb',66:'dy',67:'ho',68:'er',69:'tm',70:'yb',71:'lu',72:'hf',73:'ta',74:'w',75:'re',76:'os',77:'ir',78:'pt',79:'au',80:'hg',81:'tl',82:'pb',83:'bi',84:'po',85:'at',86:'rn',87:'fr',88:'ra',89:'ac',90:'th',91:'pa',92:'u',93:'np',94:'pu',95:'am',96:'cm',97:'bk',98:'cf',99:'es',100:'fm',101:'md',102:'no',103:'lr',104:'rf',105:'db',106:'sg',107:'bh',108:'hs',109:'mt',110:'ds',111:'rg',112:'cn',113:'nh',114:'fl',115:'mc',116:'lv',117:'ts',118:'og',}
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Ground States", "Levels", "Gammas","Cummulative","Decay Radiations","About"])
+tab0, tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["General","Ground States", "Levels", "Gammas","Cummulative","Decay Radiations","About"])
+
+def hl_list(df):
+    df['A']=df['z'].astype(str)+df['n'].astype(str)+df['symbol']
+    df.loc[df['half_life']=='STABLE','half_life_sec']=np.inf
+    df.loc[df['half_life']=='','half_life_sec']=0
+    df.loc[df['half_life']==' ','half_life_sec']=0
+    df.loc[df['half_life_sec']=='','half_life_sec']=0
+    df.loc[df['half_life_sec']==' ','half_life_sec']=0
+    df.loc[df['half_life_sec']!=df['half_life_sec'].isna(),'half_life_sec']=pd.to_numeric(df.loc[df['half_life_sec']!=df['half_life_sec'].isna(),'half_life_sec'])
+    #df['log_half_life_sec'] = np.log10(df['half_life_sec'],out=np.zeros_like(df['half_life_sec']),where=(df['half_life_sec']!=0))
+    return df
+
+def some_numbers():
+    metric = {
+        1e30:'Q',
+        1e27:'R',
+        1e24:'Y',
+        1e21:'Z',
+        1e18:'E',
+        1e15:'P',
+        1e12:'T',
+        1e9:'G',
+        1e6:'M',
+        1e3:'k',
+        1:'',
+        1e-3:'m',
+        1e-6:'u',
+        1e-9:'n',
+        1e-12:'p',
+        1e-15:'f',
+        1e-18:'a',
+        1e-21:'z',
+        1e-24:'y',
+        1e-27:'r',
+        1e-30:'q'
+        }
+    bins = [1e30,1e27,1e24,1e21,1e18,1e15,1e12,1e9, 1e6,1e3,1,1e-3,1e-6,1e-9,1e-12,1e-15,1e-18,1e-21,1e-24,1e-27,1e-30]
+    stamps = ['Qs','Rs','Ys','Zs','Es','Ps','Ts','Gs','Ms','ks','s','ms','us','ns','ps','fs','as','zs','ys','rs','qs']
+
+    n = [5,6,7,8]
+    k = [2,4,6,8]
+
+    nk = np.empty(shape=(4,2,1), dtype='object')
+    nk[:,0] = np.array(n).reshape(-1,1)
+    nk[:,1] = np.array(k).reshape(-1,1)
+
+    fig.add_trace(go.Scatter3d(x=[0,1,2,3],y=[0,1,2,3],z=[0,1,2,3],                       text=[9,8,7,6],customdata=nk,
+    hovertemplate='<br>x:%{x}<br>y:%{y}<br>z:%{z}<br>m:%{text}<br>n:%{customdata[0]}<br>k:%{customdata[1]}'))
+    return
+
+with tab0:
+    st.header("Half-Life and nuclear data")
+    st.title("Half-what?")
+    st.markdown("For people who were once chemists before any contact with the nuclear world - *such as myself* - it is difficult to wrap one's mind around this new worlds. For us, there is just one type of uranium, of hydrogen, of oxygen...")
+    st.markdown("So when we raise one eyebrow after a nuclear scientist says **'Which isotope?'** is nothing but a natural reaction. It took me some time to remember that the protons orient the name of the element, as the number of neutrons adds to the mass")
+    st.markdown("Now, how many protons or neutrons are in a nucleus says a lot about how much time said nucleus can exist - **by reasons intrinsic to the subparticle physics** - such as strong and weak force. As there is no intent on suffering by entering the wild domains of particle physics, one question remains: How much time can this nucleus be?")
+    st.markdown("A half-life is the average time on which any given isotope takes to decay half of its mass. Naturally, these decays take several different forms of decay by different mechanisms:")
+    df = hl_list(iaea.Api.Import('ground_states','all'))
+    df2 = pd.pivot_table(df,values='half_life_sec',index='z',columns='n',aggfunc="sum").fillna(0)
+    log_vals = np.log10(df2,out=np.zeros_like(df2),where=(df2!=0))
+    # HLs = 10**df2.values
+    # names= np.repeat(list(isotopes_dic.values()), len(df2.columns)).reshape(len(df2.index), len(df2.columns))
+    # nk = np.empty(shape=(len(df2.index)*len(df2.columns),2,1), dtype='object')
+    # nk[:,0] = np.array(HLs).reshape(-1,1)
+    # nk[:,1] = np.array(names).reshape(-1,1)
+
+    fig = px.imshow(log_vals.replace({0:np.nan}),color_continuous_scale='jet',origin='lower')
+
+    fig.update(data=[{'customdata': np.repeat(list(isotopes_dic.values()), len(df2.columns)).reshape(len(df2.index), len(df2.columns)),'hovertemplate': 'Protons: %{y}<br>Neutrons: %{x}<br>Symbol: %{customdata}<extra></extra>'}])
+
+    fig.update_layout(coloraxis_colorbar=dict(
+    title="Half-Life (s)",
+    tickvals=[30,27,24,21,18,15,12,9,6,3,1,-3,-6,-9,-12,-15,-18,-21,-24,-27,-30],
+    ticktext=["1e30","1e27","1e24","1e21","1e18","1e15","1e12","1e9","1e6","1e3","1","1e-3","1e-6","1e-9","1e-12","1e-15","1e-18","1e-21","1e-24","1e-27","1e-30"]
+    ))
+
+    fig.update_layout(hovermode="y unified")
+    st.plotly_chart(fig, use_container_width=True)
 
 with tab1:
     Mode='ground_states'
@@ -215,7 +294,7 @@ with tab4:
             )
 
 with tab5:
-    st.header('Import the decay radiations')
+    st.header('Import the Decay Radiations')
     st.markdown('Given an isotope, this mode lists all the specified radiation decays in the different energy levels.')
     st.markdown(r'''
                 This data lists all the different decay types:
@@ -228,13 +307,13 @@ with tab5:
                 $$
                 C_{6}^{8} -> N^{7}_{7} + \bar{\nu}_{e} + e^{{}-{}}
                 $$
-                - **Beta Plus**: Convertion of the atomic nucleus into a nucleus with atomic number increased by one, while emitting a positron and an electron neutrino. Note: Electron Capture is considered within this scope in the IAEA database [Wikipedia](https://en.wikipedia.org/wiki/Beta_decay)
+                - **Beta Plus**: Convertion of the atomic nucleus into a nucleus with atomic number increased by one, while emitting a positron and an electron neutrino. Note: Electron Capture is considered within this scope in the IAEA database. [Wikipedia](https://en.wikipedia.org/wiki/Beta_decay)
                 $$
                 C_{6}^{4} -> B^{5}_{5} + \nu_{e} + e^{{}+{}}
                 $$
                 - **Gamma**: It happens when an excited nucleus emits some of its energy (as a gamma particle)in order to return to the ground state or a lower energy state. [Wikipedia](https://en.wikipedia.org/wiki/Gamma_ray)
                 $$
-                Ba_{56}^{{}*{}81} -> Ba^{56}_{81} + \gamma
+                Ba_{81}^{{}*{}56} -> Ba^{56}_{81} + \gamma
                 $$
 
                 - **Auger and conversion electron**: The filling of an inner-shell vacancy of an atom is accompanied by the emission of an electron from the same atom. [Wikipedia](https://en.wikipedia.org/wiki/Auger_effect)
