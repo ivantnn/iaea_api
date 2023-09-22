@@ -2,6 +2,7 @@ import numpy as np  # np mean, np random
 import pandas as pd  # read csv, df manipulation
 import plotly.express as px  # interactive charts
 import plotly.figure_factory as ff
+import plotly.graph_objs as go
 import streamlit as st
 import iaea
 
@@ -55,8 +56,7 @@ api_dic={1:'h',2:'he',3:'li',4:'be',5:'b',6:'c',7:'n',8:'o',9:'f',10:'ne',11:'na
 tab0, tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["General","Ground States", "Levels", "Gammas","Cummulative","Decay Radiations","About"])
 
 def hl_list(df):
-    df['A']=df['z'].astype(str)+df['n'].astype(str)+df['symbol']
-    df.loc[df['half_life']=='STABLE','half_life_sec']=np.inf
+    df['A']=(df['z']+df['n']).astype(str)+df['symbol']
     df.loc[df['half_life']=='','half_life_sec']=0
     df.loc[df['half_life']==' ','half_life_sec']=0
     df.loc[df['half_life_sec']=='','half_life_sec']=0
@@ -101,6 +101,7 @@ def some_numbers():
 
     fig.add_trace(go.Scatter3d(x=[0,1,2,3],y=[0,1,2,3],z=[0,1,2,3],                       text=[9,8,7,6],customdata=nk,
     hovertemplate='<br>x:%{x}<br>y:%{y}<br>z:%{z}<br>m:%{text}<br>n:%{customdata[0]}<br>k:%{customdata[1]}'))
+
     return
 
 with tab0:
@@ -109,7 +110,6 @@ with tab0:
     st.markdown("For people who were once chemists before any contact with the nuclear world - *such as myself* - it is difficult to wrap one's mind around this new worlds. For us, there is just one type of uranium, of hydrogen, of oxygen...")
     st.markdown("So when we raise one eyebrow after a nuclear scientist says **'Which isotope?'** is nothing but a natural reaction. It took me some time to remember that the protons orient the name of the element, as the number of neutrons adds to the mass")
     st.markdown("Now, how many protons or neutrons are in a nucleus says a lot about how much time said nucleus can exist - **by reasons intrinsic to the subparticle physics** - such as strong and weak force. As there is no intent on suffering by entering the wild domains of particle physics, one question remains: How much time can this nucleus be?")
-    st.markdown("A half-life is the average time on which any given isotope takes to decay half of its mass. Naturally, these decays take several different forms of decay by different mechanisms:")
     df = hl_list(iaea.Api.Import('ground_states','all'))
     df2 = pd.pivot_table(df,values='half_life_sec',index='z',columns='n',aggfunc="sum").fillna(0)
     log_vals = np.log10(df2,out=np.zeros_like(df2),where=(df2!=0))
@@ -118,19 +118,120 @@ with tab0:
     # nk = np.empty(shape=(len(df2.index)*len(df2.columns),2,1), dtype='object')
     # nk[:,0] = np.array(HLs).reshape(-1,1)
     # nk[:,1] = np.array(names).reshape(-1,1)
+    graph = st.selectbox("Graph mode",("Half-Life","Decay Type"),key="general_ban")
 
-    fig = px.imshow(log_vals.replace({0:np.nan}),color_continuous_scale='jet',origin='lower')
+    decays = {
+        np.nan:np.nan,
+        '2B+':1,
+        '2B-':2,
+        '2EC':3,
+        '2N':4,
+        '2P':5,
+        'A':6,
+        'B+':7,
+        'B+P':8,
+        'B-':9,
+        'B-2N':10,
+        'B-N':11,
+        'EC':12,
+        'EC+B+':13,
+        'ECP':14,
+        'ECP+EC2P':15,
+        'ECSF':16,
+        'IT':17,
+        'N':18,
+        'P':19,
+        'SF':20
+        }
 
-    fig.update(data=[{'customdata': np.repeat(list(isotopes_dic.values()), len(df2.columns)).reshape(len(df2.index), len(df2.columns)),'hovertemplate': 'Protons: %{y}<br>Neutrons: %{x}<br>Symbol: %{customdata}<extra></extra>'}])
+    vals = df['decay_1'].replace({' ':np.nan}).values
+    df['decay_class'] = [decays[vals[i]] for i in range(0,len(vals))]
+    piv=pd.pivot_table(df,values='decay_class',index='z',columns='n',aggfunc='sum')
 
-    fig.update_layout(coloraxis_colorbar=dict(
-    title="Half-Life (s)",
-    tickvals=[30,27,24,21,18,15,12,9,6,3,1,-3,-6,-9,-12,-15,-18,-21,-24,-27,-30],
-    ticktext=["1e30","1e27","1e24","1e21","1e18","1e15","1e12","1e9","1e6","1e3","1","1e-3","1e-6","1e-9","1e-12","1e-15","1e-18","1e-21","1e-24","1e-27","1e-30"]
-    ))
+    if graph == "Half-Life":
 
-    fig.update_layout(hovermode="y unified")
-    st.plotly_chart(fig, use_container_width=True)
+        fig1 = px.imshow(log_vals.replace({0:np.nan}),color_continuous_scale='jet',origin='lower')
+
+        fig1.update(data=[{'customdata': np.repeat(list(isotopes_dic.values()), len(df2.columns)).reshape(len(df2.index), len(df2.columns)),'hovertemplate': 'Protons: %{y}<br>Neutrons: %{x}<br>Symbol: %{customdata}<extra></extra>'}])
+
+        fig1.update_layout(coloraxis_colorbar=dict(
+        title="Half-Life (s)",
+        tickvals=[30,27,24,21,18,15,12,9,6,3,1,-3,-6,-9,-12,-15,-18,-21,-24,-27,-30],
+        ticktext=["1e30","1e27","1e24","1e21","1e18","1e15","1e12","1e9","1e6","1e3","1","1e-3","1e-6","1e-9","1e-12","1e-15","1e-18","1e-21","1e-24","1e-27","1e-30"]
+        ))
+
+        fig1.update_layout(hovermode="y unified")
+        st.plotly_chart(fig1, use_container_width=True)
+
+    elif graph=="Decay Type":
+        df.loc[df['half_life']=='STABLE','decay_1']='STABLE'
+        df.loc[df['half_life']==' ','decay_1']='unknown'
+        df.loc[df['half_life']=='','decay_1']='unknown'
+        st.markdown("Hint: Click the legends icons to show/hide some of the decay types!")
+        #fig = px.imshow(piv,origin='lower',color_continuous_scale='viridis')
+        data = px.scatter(df,x='n',y='z',color='decay_1',
+                         hover_data={'decay_1':False,
+                                     'z':True,
+                                     'n':True,
+                                     'Symbol':df['symbol'],
+                                     'Decay type':df['decay_1']
+                             })
+
+        # fig.update_layout(coloraxis_colorbar=dict(
+        # title="Dcay Type",
+        # tickvals=[20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1],
+        # ticktext=["SF","P","N","IT","ECSF","ECP+EC2P","ECP","EC+B+","EC","B-N","B-2N","B-","B+P","B+","A","2P","2N","2EC","2B-","2B+"]
+        # ))
+        #fig2.update_layout(legend=dict(text='Decay Type'))
+        layout = go.Layout(
+            annotations=[
+                dict(
+                    align="right",
+                    valign="top",
+                    text='Decay Type',
+                    showarrow=False,
+                    xref="paper",
+                    yref="paper",
+                    xanchor="center",
+                    yanchor="top"
+                )
+            ]
+        )
+        fig3 = go.Figure(data=data, layout=layout)
+        st.plotly_chart(fig3, use_container_width=True)
+
+    st.markdown("A half-life is the average time on which any given isotope takes to decay half of its mass. Naturally, these decays take several different forms of decay by different mechanisms: Beta-Minus, Beta-Plus, Electron-Capture, Alpha emitting, etc")
+    st.markdown("Now, it is pretty interesting to see how much of a difference just the addition or exclusion of a single neutron can do on a single isotope")
+    st.title("Data, Data, Data")
+    st.markdown("And of course, we can use the data to make some interesting manipulations so we can actually see some cool stuff. For example:")
+    #df.loc[df['half_life']=='STABLE','half_life_sec']='STABLE'
+    df.loc[df['half_life']=='STABLE','decay_1']='STABLE'
+    iso_list = isotopes_dic.values()
+    gen2=st.selectbox("Select the nuclear Isotope:",iso_list,key='gen_g2')
+    df['sz']=[12]*len(df)
+    fig2 = px.scatter(df.loc[df['symbol']==gen2],x='n',y='half_life_sec',color='decay_1',size='sz',log_y=True)
+
+    #Finding the stable ones
+    stab = df.loc[(df['symbol']==gen2)&(df['half_life']=='STABLE')]
+    stab_len = len(stab)
+
+    if stab_len!=0:
+        mx = df.loc[df['symbol']==gen2,'half_life_sec'].max()
+        stab['mx']=[mx]*stab_len
+        fig2.add_bar(x=stab['n'],y=stab['mx'],text=stab['half_life'],alignmentgroup='n')
+            # fig2.add_annotation(x=stab['n'].iloc[i]+0.25,
+            #                  y=0.12,
+            #                  showarrow=False,
+            #                  text="Stable",
+            #                  textangle=270,
+            #                  xanchor='left',
+            #                  xref="paper",
+            #                  yref="paper")
+
+    st.plotly_chart(fig2,use_container_width=True)
+    st.markdown("Now, nuclear data is data, just like any data, with all its needs of treatment, its inconsistencies and... well, limitations to access. Mainly for a subject so delicate in the discussion - After all, when one says nuclear, everyone seems to remember the horrors of the nuclear arms race, and very few contemplate their medicinal or energetic usages.")
+    st.markdown("Luckily for us, the International Agency of Energy makes available a full nuclear database, from which you can (kinda) easily download using the API... or download using this website I made :) You can go to the other tabs and have fun downloading nuclear data from the IAEA itself - in a more interactive way!")
+
 
 with tab1:
     Mode='ground_states'
