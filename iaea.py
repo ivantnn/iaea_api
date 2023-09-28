@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 import urllib.request
+import networkx as nx
+import matplotlib.pyplot as plt
 
 class Api:
 	def path():
@@ -198,8 +200,6 @@ class chain_finder:
 		return np.unique(np.array(decay_list))#Returning all the isotopes
 
 	def plot_chain(iso):
-		import networkx as nx
-		import matplotlib.pyplot as plt
 		fig,ax=plt.subplots()
 		g = nx.DiGraph()
 		#g.add_nodes_from([1,2,3,4,5,6,7])
