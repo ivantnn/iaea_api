@@ -224,11 +224,14 @@ class chain_finder:
 		#plt.show()
 		return fig
 
-
 def bateman_matrix(iso,export_csv=False):
 	f = chain_finder()
 	df2 = f.find_daughters()
 	decay_list = chain_finder.chain(iso,[],df2)
+	print("df2 print")
+	print(df2)
+	print("")
+	df2 = df2.fillna(0)
 	if decay_list[0]==iso:
 		print('No decay chain for this isotope')
 		return
@@ -246,12 +249,17 @@ def bateman_matrix(iso,export_csv=False):
 				if j in decay_list:
 					t_1_2 = df2[j]['half_life_sec']
 					spawn = 0
+					print("Isotope:" + j)
+					print("Decay 1 %: " + str(df2[j]['decay_1_%']))
+					print("Decay 2 %: " + str(df2[j]['decay_2_%']))
+					print("Decay 3 %: " + str(df2[j]['decay_3_%']))
+					den = df2[j]['decay_1_%']+df2[j]['decay_2_%']+df2[j]['decay_3_%']
 					if df2[j]['decay_daughter_1']==i:
-						spawn = df2[j]['decay_1_%']
+						spawn = df2[j]['decay_1_%']/den
 					elif df2[j]['decay_daughter_2']==i:
-						spawn = df2[j]['decay_2_%']
+						spawn = df2[j]['decay_2_%']/den
 					elif df2[j]['decay_daughter_3']==i:
-						spawn = df2[j]['decay_3_%']
+						spawn = df2[j]['decay_3_%']/den
 					df3[i][j]=spawn*np.log(2)/t_1_2
 
 	if export_csv==True:
