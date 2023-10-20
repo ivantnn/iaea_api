@@ -106,7 +106,8 @@ with tab00:
         'IT':17,
         'N':18,
         'P':19,
-        'SF':20
+        'SF':20,
+        'B-A':21
         }
 
     vals = df['decay_1'].replace({' ':np.nan}).values
