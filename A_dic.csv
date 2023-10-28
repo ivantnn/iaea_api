@@ -1,0 +1,338 @@
+,0
+0,[]
+1,['Nn']
+2,[]
+3,['H']
+4,['N' 'H' 'Li']
+5,['H' 'He' 'Li']
+6,['N' 'H' 'He' 'Be']
+7,['H' 'He' 'Be' 'B']
+8,['He' 'Li' 'Be' 'B' 'C']
+9,['He' 'Li' 'B' 'C']
+10,['He' 'Li' 'Be' 'C' 'N']
+11,['Li' 'Be' 'C' 'N' 'O']
+12,['Li' 'Be' 'B' 'N' 'O']
+13,['Be' 'B' 'N' 'O' 'F']
+14,['Be' 'B' 'C' 'O' 'F']
+15,['Be' 'B' 'C' 'O' 'F' 'Ne']
+16,['Be' 'B' 'C' 'N' 'F' 'Ne']
+17,['B' 'C' 'N' 'F' 'Ne' 'Na']
+18,['B' 'C' 'N' 'F' 'Ne' 'Na']
+19,['B' 'C' 'N' 'O' 'Ne' 'Na' 'Mg']
+20,['B' 'C' 'N' 'O' 'F' 'Na' 'Mg']
+21,['B' 'N' 'O' 'F' 'Na' 'Mg' 'Al']
+22,['C' 'N' 'O' 'F' 'Na' 'Mg' 'Al' 'Si']
+23,['N' 'O' 'F' 'Ne' 'Mg' 'Al' 'Si']
+24,['N' 'O' 'F' 'Ne' 'Na' 'Al' 'Si']
+25,['F' 'Ne' 'Na' 'Al' 'Si' 'P']
+26,['O' 'F' 'Ne' 'Na' 'Al' 'Si' 'P' 'S']
+27,['F' 'Ne' 'Na' 'Mg' 'Si' 'P' 'S']
+28,['F' 'Ne' 'Na' 'Mg' 'Al' 'P' 'S']
+29,['F' 'Ne' 'Na' 'Mg' 'Al' 'P' 'S' 'Cl']
+30,['F' 'Ne' 'Na' 'Mg' 'Al' 'P' 'S' 'Cl' 'Ar']
+31,['F' 'Ne' 'Na' 'Mg' 'Al' 'Si' 'S' 'Cl' 'Ar']
+32,['Ne' 'Na' 'Mg' 'Al' 'Si' 'P' 'Cl' 'Ar']
+33,['Ne' 'Na' 'Mg' 'Al' 'Si' 'P' 'Cl' 'Ar' 'K']
+34,['Ne' 'Na' 'Mg' 'Al' 'Si' 'P' 'Cl' 'Ar' 'K' 'Ca']
+35,['Na' 'Mg' 'Al' 'Si' 'P' 'S' 'Ar' 'K' 'Ca']
+36,['Na' 'Mg' 'Al' 'Si' 'P' 'Cl' 'K' 'Ca']
+37,['Na' 'Mg' 'Al' 'Si' 'P' 'S' 'Ar' 'K' 'Ca']
+38,['Mg' 'Al' 'Si' 'P' 'S' 'Cl' 'K' 'Ca' 'Sc' 'Ti']
+39,['Mg' 'Al' 'Si' 'P' 'S' 'Cl' 'Ar' 'Ca' 'Sc' 'Ti']
+40,['Mg' 'Al' 'Si' 'P' 'S' 'Cl' 'K' 'Sc' 'Ti']
+41,['Al' 'Si' 'P' 'S' 'Cl' 'Ar' 'Ca' 'Sc' 'Ti']
+42,['Al' 'Si' 'P' 'S' 'Cl' 'Ar' 'K' 'Sc' 'Ti' 'V' 'Cr']
+43,['Al' 'Si' 'P' 'S' 'Cl' 'Ar' 'K' 'Sc' 'Ti' 'V' 'Cr']
+44,['Si' 'P' 'S' 'Cl' 'Ar' 'K' 'Sc' 'Ti' 'V' 'Cr' 'Mn']
+45,['P' 'S' 'Cl' 'Ar' 'K' 'Ca' 'Ti' 'V' 'Cr' 'Mn' 'Fe']
+46,['P' 'S' 'Cl' 'Ar' 'K' 'Sc' 'V' 'Cr' 'Mn' 'Fe']
+47,['Cl' 'Ar' 'K' 'Ca' 'Sc' 'V' 'Cr' 'Mn' 'Fe']
+48,['S' 'Cl' 'Ar' 'K' 'Ca' 'Sc' 'V' 'Cr' 'Mn' 'Fe' 'Co' 'Ni']
+49,['Cl' 'Ar' 'K' 'Ca' 'Sc' 'V' 'Cr' 'Mn' 'Fe' 'Ni']
+50,['Cl' 'Ar' 'K' 'Ca' 'Sc' 'V' 'Cr' 'Mn' 'Fe' 'Co' 'Ni']
+51,['Cl' 'Ar' 'K' 'Ca' 'Sc' 'Ti' 'Cr' 'Mn' 'Fe' 'Co' 'Ni']
+52,['Cl' 'Ar' 'K' 'Ca' 'Sc' 'Ti' 'V' 'Mn' 'Fe' 'Co' 'Ni']
+53,['Ar' 'K' 'Ca' 'Sc' 'Ti' 'V' 'Mn' 'Fe' 'Co' 'Ni' 'Cu']
+54,['K' 'Ca' 'Sc' 'Ti' 'V' 'Mn' 'Co' 'Ni' 'Cu' 'Zn']
+55,['K' 'Ca' 'Sc' 'Ti' 'V' 'Cr' 'Fe' 'Co' 'Ni' 'Cu' 'Zn']
+56,['K' 'Ca' 'Sc' 'Ti' 'V' 'Cr' 'Mn' 'Co' 'Ni' 'Cu' 'Zn']
+57,['Ca' 'Sc' 'Ti' 'V' 'Cr' 'Mn' 'Co' 'Ni' 'Cu' 'Zn']
+58,['Ca' 'Sc' 'Ti' 'V' 'Cr' 'Mn' 'Co' 'Cu' 'Zn']
+59,['Sc' 'Ti' 'V' 'Cr' 'Mn' 'Fe' 'Ni' 'Cu' 'Zn' 'Ga' 'Ge']
+60,['Ti' 'V' 'Cr' 'Mn' 'Fe' 'Co' 'Cu' 'Zn' 'Ga' 'Ge']
+61,['Sc' 'Ti' 'V' 'Cr' 'Mn' 'Fe' 'Co' 'Cu' 'Zn' 'Ga' 'Ge']
+62,['Ti' 'V' 'Cr' 'Mn' 'Fe' 'Co' 'Cu' 'Zn' 'Ga' 'Ge']
+63,['Ti' 'V' 'Cr' 'Mn' 'Fe' 'Co' 'Ni' 'Zn' 'Ga' 'Ge' 'As']
+64,['Ti' 'V' 'Cr' 'Mn' 'Fe' 'Co' 'Cu' 'Ga' 'Ge' 'As' 'Se']
+65,['V' 'Cr' 'Mn' 'Fe' 'Co' 'Ni' 'Zn' 'Ga' 'Ge' 'As' 'Se']
+66,['V' 'Cr' 'Mn' 'Fe' 'Co' 'Ni' 'Cu' 'Ga' 'Ge' 'As' 'Se']
+67,['V' 'Mn' 'Fe' 'Co' 'Ni' 'Cu' 'Ga' 'Ge' 'As' 'Se']
+68,['Cr' 'Mn' 'Fe' 'Co' 'Ni' 'Cu' 'Ga' 'Ge' 'As' 'Se']
+69,['Cr' 'Mn' 'Fe' 'Co' 'Ni' 'Cu' 'Zn' 'Ge' 'As' 'Se' 'Br' 'Kr']
+70,['Cr' 'Mn' 'Fe' 'Co' 'Ni' 'Cu' 'Zn' 'Ga' 'As' 'Se' 'Br' 'Kr']
+71,['Mn' 'Fe' 'Co' 'Ni' 'Cu' 'Zn' 'Ge' 'As' 'Se' 'Br' 'Kr']
+72,['Mn' 'Fe' 'Co' 'Ni' 'Cu' 'Zn' 'Ga' 'As' 'Se' 'Br' 'Kr' 'Rb']
+73,['Mn' 'Fe' 'Co' 'Ni' 'Cu' 'Zn' 'Ga' 'As' 'Se' 'Br' 'Kr' 'Rb' 'Sr']
+74,['Fe' 'Co' 'Ni' 'Cu' 'Zn' 'Ga' 'As' 'Br' 'Kr' 'Rb' 'Sr']
+75,['Fe' 'Co' 'Ni' 'Cu' 'Zn' 'Ga' 'Ge' 'Se' 'Br' 'Kr' 'Rb' 'Sr']
+76,['Co' 'Ni' 'Cu' 'Zn' 'Ga' 'As' 'Br' 'Kr' 'Rb' 'Sr' 'Y']
+77,['Co' 'Ni' 'Cu' 'Zn' 'Ga' 'Ge' 'As' 'Br' 'Kr' 'Rb' 'Sr' 'Y' 'Zr']
+78,['Ni' 'Cu' 'Zn' 'Ga' 'Ge' 'As' 'Br' 'Rb' 'Sr' 'Y' 'Zr']
+79,['Ni' 'Cu' 'Zn' 'Ga' 'Ge' 'As' 'Se' 'Kr' 'Rb' 'Sr' 'Y' 'Zr']
+80,['Ni' 'Cu' 'Zn' 'Ga' 'Ge' 'As' 'Br' 'Rb' 'Sr' 'Y' 'Zr']
+81,['Cu' 'Zn' 'Ga' 'Ge' 'As' 'Se' 'Kr' 'Rb' 'Sr' 'Y' 'Zr' 'Nb' 'Mo']
+82,['Ni' 'Cu' 'Zn' 'Ga' 'Ge' 'As' 'Se' 'Br' 'Rb' 'Sr' 'Y' 'Zr' 'Nb' 'Mo']
+83,['Zn' 'Ga' 'Ge' 'As' 'Se' 'Br' 'Rb' 'Sr' 'Y' 'Zr' 'Nb' 'Mo']
+84,['Zn' 'Ga' 'Ge' 'As' 'Se' 'Br' 'Rb' 'Y' 'Zr' 'Nb' 'Mo']
+85,['Zn' 'Ga' 'Ge' 'As' 'Se' 'Br' 'Kr' 'Sr' 'Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Ru']
+86,['Ga' 'Ge' 'As' 'Se' 'Br' 'Rb' 'Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Ru']
+87,['Ga' 'Ge' 'As' 'Se' 'Br' 'Kr' 'Rb' 'Y' 'Zr' 'Nb' 'Mo' 'Tc']
+88,['Ge' 'As' 'Se' 'Br' 'Kr' 'Rb' 'Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Ru']
+89,['Ge' 'As' 'Se' 'Br' 'Kr' 'Rb' 'Sr' 'Zr' 'Nb' 'Mo' 'Tc' 'Ru' 'Rh']
+90,['Ge' 'As' 'Se' 'Br' 'Kr' 'Rb' 'Sr' 'Y' 'Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Pd']
+91,['As' 'Se' 'Br' 'Kr' 'Rb' 'Sr' 'Y' 'Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Pd']
+92,['As' 'Se' 'Br' 'Kr' 'Rb' 'Sr' 'Y' 'Nb' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag']
+93,['Se' 'Br' 'Kr' 'Rb' 'Sr' 'Y' 'Zr' 'Mo' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag']
+94,['Se' 'Br' 'Kr' 'Rb' 'Sr' 'Y' 'Nb' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'Cd']
+95,['Se' 'Br' 'Kr' 'Rb' 'Sr' 'Y' 'Zr' 'Nb' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'Cd']
+96,['Br' 'Kr' 'Rb' 'Sr' 'Y' 'Zr' 'Nb' 'Tc' 'Rh' 'Pd' 'Ag' 'Cd' 'In']
+97,['Br' 'Kr' 'Rb' 'Sr' 'Y' 'Zr' 'Nb' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'Cd' 'In']
+98,['Br' 'Kr' 'Rb' 'Sr' 'Y' 'Zr' 'Nb' 'Tc' 'Rh' 'Pd' 'Ag' 'Cd' 'In']
+99,['Kr' 'Rb' 'Sr' 'Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sn']
+100,['Kr' 'Rb' 'Sr' 'Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sn']
+101,['Br' 'Kr' 'Rb' 'Sr' 'Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sn']
+102,['Kr' 'Rb' 'Sr' 'Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Rh' 'Ag' 'Cd' 'In' 'Sn']
+103,['Rb' 'Sr' 'Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Ru' 'Pd' 'Ag' 'Cd' 'In' 'Sn' 'Sb']
+104,['Rb' 'Sr' 'Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Rh' 'Ag' 'Cd' 'In' 'Sn' 'Sb' 'Te']
+105,['Rb' 'Sr' 'Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Ag' 'Cd' 'In' 'Sn' 'Sb' 'Te']
+106,['Rb' 'Sr' 'Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Ag' 'In' 'Sn' 'Sb' 'Te']
+107,['Sr' 'Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Pd' 'Cd' 'In' 'Sn' 'Sb' 'Te']
+108,['Sr' 'Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Ag' 'In' 'Sn' 'Sb' 'Te' 'I' 'Xe']
+109,['Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Pd' 'Cd' 'In' 'Sn' 'Sb' 'Te' 'I' 'Xe']
+110,['Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Ag' 'In' 'Sn' 'Sb' 'Te' 'I' 'Xe']
+111,['Y' 'Zr' 'Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'In' 'Sn' 'Sb' 'Te' 'I' 'Xe']
+112,['Zr' 'Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'In' 'Sb' 'Te' 'I' 'Xe' 'Cs']
+113,['Zr' 'Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'Cd' 'Sn' 'Sb' 'Te' 'I' 'Xe' 'Cs']
+114,['Zr' 'Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'In' 'Sb' 'Te' 'I' 'Xe' 'Cs' 'Ba']
+115,['Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sb' 'Te' 'I' 'Xe' 'Cs' 'Ba']
+116,['Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sb' 'Te' 'I' 'Xe' 'Cs' 'Ba']
+117,"['Nb' 'Mo' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sb' 'Te' 'I' 'Xe' 'Cs' 'Ba'
+ 'La']"
+118,['Mo' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sb' 'Te' 'I' 'Xe' 'Cs' 'Ba']
+119,['Mo' 'Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sb' 'Te' 'I' 'Xe' 'Cs' 'Ba']
+120,['Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sb' 'I' 'Xe' 'Cs' 'Ba' 'La']
+121,"['Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sn' 'Te' 'I' 'Xe' 'Cs' 'Ba' 'La' 'Ce'
+ 'Pr']"
+122,['Tc' 'Ru' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sb' 'I' 'Xe' 'Cs' 'Ba' 'La' 'Ce']
+123,['Ru' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sn' 'Te' 'I' 'Xe' 'Cs' 'Ba' 'La' 'Ce']
+124,['Ru' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sb' 'I' 'Xe' 'Cs' 'Ba' 'La' 'Ce' 'Pr']
+125,"['Ru' 'Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sn' 'Sb' 'I' 'Xe' 'Cs' 'Ba' 'La' 'Ce' 'Pr'
+ 'Nd']"
+126,['Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sn' 'Sb' 'I' 'Cs' 'Ba' 'La' 'Ce' 'Pr' 'Nd']
+127,"['Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sn' 'Sb' 'Te' 'Xe' 'Cs' 'Ba' 'La' 'Ce' 'Pr'
+ 'Nd']"
+128,"['Rh' 'Pd' 'Ag' 'Cd' 'In' 'Sn' 'Sb' 'Te' 'I' 'Cs' 'Ba' 'La' 'Ce' 'Pr' 'Nd'
+ 'Pm']"
+129,"['Pd' 'Ag' 'Cd' 'In' 'Sn' 'Sb' 'Te' 'I' 'Cs' 'Ba' 'La' 'Ce' 'Pr' 'Nd' 'Pm'
+ 'Sm']"
+130,"['Pd' 'Ag' 'Cd' 'In' 'Sn' 'Sb' 'Te' 'I' 'Cs' 'La' 'Ce' 'Pr' 'Nd' 'Pm' 'Sm'
+ 'Eu']"
+131,"['Pd' 'Ag' 'Cd' 'In' 'Sn' 'Sb' 'Te' 'I' 'Cs' 'Ba' 'La' 'Ce' 'Pr' 'Nd' 'Pm'
+ 'Sm' 'Eu']"
+132,"['Ag' 'Cd' 'In' 'Sn' 'Sb' 'Te' 'I' 'Cs' 'Ba' 'La' 'Ce' 'Pr' 'Nd' 'Pm' 'Sm'
+ 'Eu']"
+133,['Cd' 'In' 'Sn' 'Sb' 'Te' 'I' 'Xe' 'Ba' 'La' 'Ce' 'Pr' 'Nd' 'Pm' 'Sm']
+134,"['Cd' 'In' 'Sn' 'Sb' 'Te' 'I' 'Xe' 'Cs' 'La' 'Ce' 'Pr' 'Nd' 'Pm' 'Sm' 'Eu'
+ 'Gd']"
+135,"['In' 'Sn' 'Sb' 'Te' 'I' 'Xe' 'Cs' 'La' 'Ce' 'Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Gd'
+ 'Tb']"
+136,['In' 'Sn' 'Sb' 'Te' 'I' 'Xe' 'Cs' 'La' 'Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Gd']
+137,['In' 'Sn' 'Sb' 'Te' 'I' 'Xe' 'Cs' 'La' 'Ce' 'Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Gd']
+138,['Sn' 'Sb' 'Te' 'I' 'Xe' 'Cs' 'La' 'Ce' 'Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb']
+139,"['Sn' 'Sb' 'Te' 'I' 'Xe' 'Cs' 'Ba' 'Ce' 'Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb'
+ 'Dy']"
+140,"['Sn' 'Sb' 'Te' 'I' 'Xe' 'Cs' 'Ba' 'La' 'Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb'
+ 'Dy' 'Ho']"
+141,['Sb' 'I' 'Xe' 'Cs' 'Ba' 'La' 'Ce' 'Nd' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho']
+142,"['Sb' 'Te' 'I' 'Xe' 'Cs' 'Ba' 'La' 'Ce' 'Pr' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb' 'Dy'
+ 'Ho']"
+143,"['Te' 'I' 'Xe' 'Cs' 'Ba' 'La' 'Ce' 'Pr' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho'
+ 'Er']"
+144,"['Te' 'I' 'Xe' 'Cs' 'Ba' 'La' 'Ce' 'Pr' 'Nd' 'Pm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho'
+ 'Er' 'Tm']"
+145,"['Te' 'I' 'Xe' 'Cs' 'Ba' 'La' 'Ce' 'Pr' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho'
+ 'Er' 'Tm']"
+146,"['I' 'Xe' 'Cs' 'Ba' 'La' 'Ce' 'Pr' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho' 'Er'
+ 'Tm']"
+147,"['I' 'Xe' 'Cs' 'Ba' 'La' 'Ce' 'Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho'
+ 'Er' 'Tm']"
+148,"['Xe' 'Cs' 'Ba' 'La' 'Ce' 'Pr' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho' 'Er'
+ 'Tm']"
+149,"['Xe' 'Cs' 'Ba' 'La' 'Ce' 'Pr' 'Nd' 'Pm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho' 'Er'
+ 'Tm' 'Yb']"
+150,"['Xe' 'Cs' 'Ba' 'La' 'Ce' 'Pr' 'Nd' 'Pm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho' 'Er'
+ 'Tm' 'Yb' 'Lu']"
+151,"['Cs' 'Ba' 'La' 'Ce' 'Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho' 'Er'
+ 'Tm' 'Yb' 'Lu' 'Hf']"
+152,"['Cs' 'Ba' 'La' 'Ce' 'Pr' 'Nd' 'Pm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho' 'Er' 'Tm'
+ 'Yb' 'Lu']"
+153,"['Ba' 'La' 'Ce' 'Pr' 'Nd' 'Pm' 'Sm' 'Gd' 'Tb' 'Dy' 'Ho' 'Er' 'Tm' 'Yb'
+ 'Lu' 'Hf']"
+154,"['Ba' 'La' 'Ce' 'Pr' 'Nd' 'Pm' 'Eu' 'Tb' 'Dy' 'Ho' 'Er' 'Tm' 'Yb' 'Lu'
+ 'Hf']"
+155,"['La' 'Ce' 'Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Tb' 'Dy' 'Ho' 'Er' 'Tm' 'Yb' 'Lu'
+ 'Hf' 'Ta']"
+156,"['La' 'Ce' 'Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Tb' 'Ho' 'Er' 'Tm' 'Yb' 'Lu' 'Hf'
+ 'Ta']"
+157,"['La' 'Ce' 'Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Tb' 'Dy' 'Ho' 'Er' 'Tm' 'Yb' 'Lu'
+ 'Hf' 'Ta' 'W']"
+158,['Ce' 'Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Tb' 'Ho' 'Er' 'Tm' 'Yb' 'Lu' 'Hf' 'Ta' 'W']
+159,"['Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Gd' 'Dy' 'Ho' 'Er' 'Tm' 'Yb' 'Lu' 'Hf' 'Ta' 'W'
+ 'Re']"
+160,['Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Tb' 'Ho' 'Er' 'Tm' 'Yb' 'Lu' 'Hf' 'Ta' 'W' 'Re']
+161,"['Pr' 'Nd' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb' 'Ho' 'Er' 'Tm' 'Yb' 'Lu' 'Hf' 'Ta' 'W'
+ 'Re' 'Os']"
+162,['Nd' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb' 'Ho' 'Tm' 'Yb' 'Lu' 'Hf' 'Ta' 'W' 'Re' 'Os']
+163,"['Nd' 'Pm' 'Sm' 'Eu' 'Gd' 'Tb' 'Ho' 'Er' 'Tm' 'Yb' 'Lu' 'Hf' 'Ta' 'W' 'Re'
+ 'Os']"
+164,['Pm' 'Sm' 'Eu' 'Gd' 'Tb' 'Ho' 'Tm' 'Yb' 'Lu' 'Hf' 'Ta' 'W' 'Re' 'Os' 'Ir']
+165,"['Pm' 'Sm' 'Eu' 'Gd' 'Tb' 'Dy' 'Er' 'Tm' 'Yb' 'Lu' 'Hf' 'Ta' 'W' 'Re' 'Os'
+ 'Ir' 'Pt']"
+166,"['Sm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho' 'Tm' 'Yb' 'Lu' 'Hf' 'Ta' 'W' 'Re' 'Os' 'Ir'
+ 'Pt']"
+167,"['Sm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho' 'Tm' 'Yb' 'Lu' 'Hf' 'Ta' 'W' 'Re' 'Os' 'Ir'
+ 'Pt']"
+168,['Sm' 'Eu' 'Gd' 'Tb' 'Dy' 'Ho' 'Tm' 'Lu' 'Hf' 'Ta' 'W' 'Re' 'Os' 'Ir' 'Pt']
+169,['Eu' 'Gd' 'Tb' 'Dy' 'Ho' 'Er' 'Yb' 'Lu' 'Hf' 'Ta' 'W' 'Re' 'Os' 'Ir' 'Pt']
+170,['Gd' 'Tb' 'Dy' 'Ho' 'Tm' 'Lu' 'Hf' 'Ta' 'W' 'Re' 'Os' 'Ir' 'Pt' 'Au' 'Hg']
+171,"['Gd' 'Tb' 'Dy' 'Ho' 'Er' 'Tm' 'Lu' 'Hf' 'Ta' 'W' 'Re' 'Os' 'Ir' 'Pt' 'Au'
+ 'Hg']"
+172,"['Gd' 'Tb' 'Dy' 'Ho' 'Er' 'Tm' 'Lu' 'Hf' 'Ta' 'W' 'Re' 'Os' 'Ir' 'Pt' 'Au'
+ 'Hg']"
+173,['Tb' 'Dy' 'Ho' 'Er' 'Tm' 'Lu' 'Hf' 'Ta' 'W' 'Re' 'Os' 'Ir' 'Pt' 'Au' 'Hg']
+174,['Tb' 'Dy' 'Ho' 'Er' 'Tm' 'Lu' 'Hf' 'Ta' 'W' 'Re' 'Os' 'Ir' 'Pt' 'Au' 'Hg']
+175,['Dy' 'Ho' 'Er' 'Tm' 'Yb' 'Hf' 'Ta' 'W' 'Re' 'Os' 'Ir' 'Pt' 'Au' 'Hg']
+176,['Dy' 'Ho' 'Er' 'Tm' 'Lu' 'Ta' 'W' 'Re' 'Os' 'Ir' 'Pt' 'Au' 'Hg' 'Tl']
+177,['Ho' 'Er' 'Tm' 'Yb' 'Lu' 'Ta' 'W' 'Re' 'Os' 'Ir' 'Pt' 'Au' 'Hg' 'Tl']
+178,['Ho' 'Er' 'Tm' 'Yb' 'Lu' 'Ta' 'W' 'Re' 'Os' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb']
+179,['Er' 'Tm' 'Yb' 'Lu' 'Ta' 'W' 'Re' 'Os' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb']
+180,['Er' 'Tm' 'Yb' 'Lu' 'Ta' 'W' 'Re' 'Os' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb']
+181,['Tm' 'Yb' 'Lu' 'Hf' 'W' 'Re' 'Os' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb']
+182,['Yb' 'Lu' 'Hf' 'Ta' 'Re' 'Os' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb']
+183,['Yb' 'Lu' 'Hf' 'Ta' 'W' 'Re' 'Os' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb']
+184,['Yb' 'Lu' 'Hf' 'Ta' 'Re' 'Os' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb' 'Bi']
+185,['Yb' 'Lu' 'Hf' 'Ta' 'W' 'Os' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb' 'Bi']
+186,['Lu' 'Hf' 'Ta' 'Re' 'Os' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb' 'Bi' 'Po']
+187,['Lu' 'Hf' 'Ta' 'W' 'Re' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb' 'Bi' 'Po']
+188,['Lu' 'Hf' 'Ta' 'W' 'Re' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb' 'Bi' 'Po']
+189,['Hf' 'Ta' 'W' 'Re' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb' 'Bi' 'Po']
+190,['Hf' 'Ta' 'W' 'Re' 'Ir' 'Pt' 'Au' 'Hg' 'Tl' 'Pb' 'Bi' 'Po']
+191,['Ta' 'Re' 'Os' 'Pt' 'Au' 'Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At']
+192,['Ta' 'W' 'Re' 'Ir' 'Au' 'Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At']
+193,['Ta' 'W' 'Re' 'Os' 'Pt' 'Au' 'Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn']
+194,['Ta' 'W' 'Re' 'Os' 'Ir' 'Au' 'Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn']
+195,['W' 'Re' 'Os' 'Ir' 'Au' 'Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn']
+196,['W' 'Re' 'Os' 'Ir' 'Au' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn']
+197,['W' 'Re' 'Os' 'Ir' 'Pt' 'Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr']
+198,['Re' 'Os' 'Ir' 'Au' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr']
+199,['Re' 'Os' 'Ir' 'Pt' 'Au' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr']
+200,['Os' 'Ir' 'Pt' 'Au' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr']
+201,['Os' 'Ir' 'Pt' 'Au' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra']
+202,['Os' 'Ir' 'Pt' 'Au' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra']
+203,['Os' 'Ir' 'Pt' 'Au' 'Hg' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra']
+204,['Ir' 'Pt' 'Au' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra']
+205,['Ir' 'Pt' 'Au' 'Hg' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac']
+206,['Pt' 'Au' 'Hg' 'Tl' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac']
+207,['Pt' 'Au' 'Hg' 'Tl' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac']
+208,['Pt' 'Au' 'Hg' 'Tl' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th']
+209,['Au' 'Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th']
+210,['Au' 'Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th']
+211,['Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa']
+212,['Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa']
+213,['Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa']
+214,['Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U']
+215,['Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U']
+216,['Hg' 'Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U']
+217,['Tl' 'Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U']
+218,['Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U']
+219,['Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U' 'Np']
+220,['Pb' 'Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'Np']
+221,['Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U']
+222,['Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U']
+223,['Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U' 'Np' 'Am']
+224,['Bi' 'Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U' 'Np']
+225,['Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U' 'Np']
+226,['Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U' 'Np']
+227,['Po' 'At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U' 'Np']
+228,['At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U' 'Np' 'Pu']
+229,['At' 'Rn' 'Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U' 'Np' 'Pu' 'Am']
+230,['Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U' 'Np' 'Pu' 'Am']
+231,['Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U' 'Np' 'Pu']
+232,['Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U' 'Np' 'Pu' 'Am']
+233,['Fr' 'Ra' 'Ac' 'Th' 'Pa' 'U' 'Np' 'Pu' 'Am' 'Cm' 'Bk']
+234,['Ra' 'Ac' 'Th' 'Pa' 'U' 'Np' 'Pu' 'Am' 'Cm' 'Bk']
+235,['Ac' 'Th' 'Pa' 'U' 'Np' 'Pu' 'Am' 'Cm']
+236,['Ac' 'Th' 'Pa' 'U' 'Np' 'Pu' 'Am' 'Cm' 'Bk']
+237,['Th' 'Pa' 'U' 'Np' 'Pu' 'Am' 'Cm' 'Cf']
+238,['Th' 'Pa' 'U' 'Np' 'Pu' 'Am' 'Cm' 'Bk' 'Cf']
+239,['Pa' 'U' 'Np' 'Pu' 'Am' 'Cm' 'Bk' 'Cf']
+240,['U' 'Np' 'Pu' 'Am' 'Cm' 'Bk' 'Cf' 'Es']
+241,['U' 'Np' 'Pu' 'Am' 'Cm' 'Bk' 'Cf' 'Es' 'Fm']
+242,['U' 'Np' 'Pu' 'Am' 'Cm' 'Bk' 'Cf' 'Es' 'Fm']
+243,['U' 'Np' 'Pu' 'Am' 'Cm' 'Bk' 'Cf' 'Es' 'Fm']
+244,['U' 'Np' 'Pu' 'Am' 'Cm' 'Bk' 'Cf' 'Es' 'Fm' 'Md']
+245,['U' 'Pu' 'Am' 'Cm' 'Bk' 'Cf' 'Es' 'Fm' 'Md']
+246,['U' 'Pu' 'Am' 'Cm' 'Bk' 'Cf' 'Es' 'Fm' 'Md']
+247,['U' 'Pu' 'Am' 'Cm' 'Bk' 'Cf' 'Es' 'Fm' 'Md']
+248,['U' 'Am' 'Cm' 'Bk' 'Cf' 'Es' 'Fm' 'Md' 'No']
+249,['U' 'Cm' 'Bk' 'Cf' 'Es' 'Fm' 'Md' 'No']
+250,['U' 'Cm' 'Bk' 'Cf' 'Es' 'Fm' 'Md' 'No']
+251,['U' 'Cm' 'Bk' 'Cf' 'Es' 'Fm' 'Md' 'No']
+252,['U' 'Np' 'Pu' 'Am' 'Cm' 'Bk' 'Cf' 'Es' 'Fm' 'Md' 'No' 'Lr']
+253,['U' 'Bk' 'Cf' 'Es' 'Fm' 'Md' 'No' 'Lr' 'Rf']
+254,['U' 'Cf' 'Es' 'Fm' 'Md' 'No' 'Lr' 'Rf']
+255,['U' 'Cf' 'Es' 'Fm' 'Md' 'No' 'Lr' 'Rf' 'Db']
+256,['Cf' 'Es' 'Fm' 'Md' 'No' 'Lr' 'Rf' 'Db']
+257,['Es' 'Fm' 'Md' 'No' 'Lr' 'Rf' 'Db']
+258,['Fm' 'Md' 'No' 'Lr' 'Rf' 'Db' 'Sg']
+259,['Fm' 'Md' 'No' 'Lr' 'Rf' 'Db' 'Sg']
+260,['Md' 'No' 'Lr' 'Rf' 'Db' 'Sg' 'Bh']
+261,['Lr' 'Rf' 'Db' 'Sg' 'Bh']
+262,['No' 'Lr' 'Rf' 'Db' 'Sg' 'Bh']
+263,['Rf' 'Db' 'Sg' 'Bh' 'Hs']
+264,['Sg' 'Bh' 'Hs']
+265,['Rf' 'Sg' 'Bh' 'Hs']
+266,['Lr' 'Db' 'Sg' 'Bh' 'Hs' 'Mt']
+267,['Rf' 'Db' 'Bh' 'Hs' 'Ds']
+268,['Db' 'Hs' 'Mt']
+269,['Sg' 'Hs' 'Ds']
+270,['Db' 'Bh' 'Hs' 'Mt' 'Ds']
+271,['Sg' 'Bh' 'Ds']
+272,['Bh' 'Rg']
+273,['Hs' 'Ds']
+274,['Bh' 'Mt' 'Rg']
+275,['Hs' 'Mt']
+276,['Mt']
+277,['Hs' 'Mt' 'Ds' 'Cn']
+278,['Bh' 'Hs' 'Mt' 'Rg' 'Nh']
+279,['Ds' 'Rg']
+280,['Ds' 'Rg']
+281,['Ds' 'Rg' 'Cn']
+282,['Mt' 'Ds' 'Rg' 'Cn' 'Nh']
+283,['Cn' 'Nh']
+284,['Cn' 'Nh' 'Fl']
+285,['Cn' 'Nh']
+286,['Rg' 'Cn' 'Nh' 'Fl']
+287,['Fl' 'Mc']
+288,['Fl' 'Mc']
+289,['Fl' 'Mc']
+290,['Nh' 'Fl' 'Mc' 'Lv']
+291,['Lv']
+292,['Lv']
+293,['Lv' 'Ts']
+294,['Lv' 'Ts' 'Og']
+295,[]
+296,[]
+297,[]
+298,[]
+299,[]
